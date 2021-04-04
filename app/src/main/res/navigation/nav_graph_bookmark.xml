@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph_bookmark"
+    app:startDestination="@id/bookmarkedTvFragment">
+
+    <fragment
+        android:id="@+id/bookmarkedMovieFragment"
+        android:name="com.example.capstoneproject.bookmark.movie.BookmarkedMovieFragment"
+        android:label="BookmarkedMovieFragment" >
+        <action
+            android:id="@+id/action_bookmarkedMovieFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookmarkedTvFragment"
+        android:name="com.example.capstoneproject.bookmark.tv.BookmarkedTvFragment"
+        android:label="BookmarkedTvFragment" >
+        <action
+            android:id="@+id/action_bookmarkedTvFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.capstoneproject.detail.DetailFragment"
+        android:label="{data}">
+        <argument
+            android:name="movie"
+            app:argType="com.example.capstoneproject.core.domain.model.Movie"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <argument
+            android:name="tv"
+            app:argType="com.example.capstoneproject.core.domain.model.Tv"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+    </fragment>
+</navigation>

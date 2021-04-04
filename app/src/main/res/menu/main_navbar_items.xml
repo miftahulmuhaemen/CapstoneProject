@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/tvFragment"
+        android:enabled="true"
+        android:icon="@drawable/tv24"
+        android:menuCategory="secondary"
+        android:title="@string/tv" />
+    <item
+        android:id="@+id/movieFragment"
+        android:enabled="true"
+        android:icon="@drawable/movie24"
+        android:menuCategory="secondary"
+        android:title="@string/movie"/>
+
+</menu>
