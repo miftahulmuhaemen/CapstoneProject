@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="dummyTitle">dummyTitle</string>
+    <string name="dummyYear">dummyYear</string>
+    <string name="dummySubTitle">subTitle</string>
+    <string name="dummyLoremIpsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec venenatis varius metus sit amet bibendum. Sed placerat viverra nisl. Aliquam eget dapibus lectus. Quisque sed placerat neque, in iaculis erat. Donec pulvinar, metus non fermentum dapibus, lacus erat egestas ex, in efficitur sapien massa eget metus. Etiam rutrum massa in risus maximus, id cursus mi tincidunt. Sed pretium tempor sem, vitae tincidunt nulla varius nec. Sed non sapien massa. Sed nec turpis tortor. Duis nunc nisl, fringilla sed urna fermentum, sagittis ultrices erat.</string>
+</resources>
