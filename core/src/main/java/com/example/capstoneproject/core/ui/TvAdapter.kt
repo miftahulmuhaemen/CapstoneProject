@@ -51,6 +51,7 @@ class TvAdapter : RecyclerView.Adapter<TvAdapter.ListViewHolder>() {
         init {
             binding.root.setOnClickListener {
                 onItemClick?.invoke(listData[adapterPosition])
+                binding.root.setOnClickListener(null)
             }
         }
     }

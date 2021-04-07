@@ -9,15 +9,19 @@ import com.example.capstoneproject.core.data.source.local.room.ContentDatabase
 import com.example.capstoneproject.core.data.source.remote.RemoteDataSource
 import com.example.capstoneproject.core.domain.usecase.ContentInteractor
 import com.example.capstoneproject.core.domain.usecase.ContentUseCase
-import com.example.capstoneproject.core.utils.AppExecutors
+import net.sqlcipher.database.SQLiteDatabase
+import net.sqlcipher.database.SupportFactory
 import org.koin.android.ext.koin.androidApplication
 import org.koin.dsl.module
 
 val repositoryModule = module {
 
     fun provideDatabase(application: Application): ContentDatabase {
+        val passphrase: ByteArray = SQLiteDatabase.getBytes("capstoneProject".toCharArray())
+        val factory = SupportFactory(passphrase)
         return Room.databaseBuilder(application, ContentDatabase::class.java, "localdatabase")
             .fallbackToDestructiveMigration()
+            .openHelperFactory(factory)
             .build()
     }
 
@@ -33,10 +37,8 @@ val repositoryModule = module {
     single { provideLocalDao(get()) }
     single { LocalDataSource(get()) }
     single { RemoteDataSource(get()) }
-    single { AppExecutors() }
     single {
         ContentRepository(
-            get(),
             get(),
             get()
         )

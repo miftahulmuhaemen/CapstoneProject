@@ -1,8 +1,8 @@
+@file:Suppress("unused")
+
 package com.example.capstoneproject
 
 import android.app.Application
-import com.example.capstoneproject.bookmark.movie.BookmarkedMovieViewModel
-import com.example.capstoneproject.bookmark.tv.BookmarkedTvViewModel
 import com.example.capstoneproject.core.di.networkModule
 import com.example.capstoneproject.core.di.repositoryModule
 import com.example.capstoneproject.detail.DetailViewModel
@@ -22,8 +22,6 @@ class App : Application() {
                 viewModel { MovieViewModel(get()) }
                 viewModel { TvViewModel(get()) }
                 viewModel { DetailViewModel(get()) }
-                viewModel { BookmarkedTvViewModel(get()) }
-                viewModel { BookmarkedMovieViewModel(get()) }
             }))
         }
     }

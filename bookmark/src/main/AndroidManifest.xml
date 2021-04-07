@@ -5,10 +5,24 @@
 
     <dist:module
         dist:instant="false"
-        dist:title="@string/title_bookmark">
+        dist:title="Bookmark">
         <dist:delivery>
             <dist:install-time />
         </dist:delivery>
         <dist:fusing dist:include="true" />
     </dist:module>
+
+
+    <application
+        android:fullBackupContent="true"
+        >
+        <activity android:name=".BookmarkActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="capstoneproject"
+                    android:host="bookmark"/>
+            </intent-filter>
+        </activity>
+    </application>
 </manifest>

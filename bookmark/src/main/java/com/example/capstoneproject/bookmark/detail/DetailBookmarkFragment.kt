@@ -1,4 +1,4 @@
-package com.example.capstoneproject.detail
+package com.example.capstoneproject.bookmark.detail
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -15,12 +15,12 @@ import com.example.capstoneproject.core.domain.model.Tv
 import com.example.capstoneproject.databinding.FragmentDetailBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class DetailFragment : Fragment() {
+class DetailBookmarkFragment : Fragment() {
 
     private var _binding: FragmentDetailBinding? = null
     private val binding get() = _binding!!
-    private val detailViewModel: DetailViewModel by viewModel()
-    private val args: DetailFragmentArgs by navArgs()
+    private val detailBookmarkViewModel: DetailBookmarkViewModel by viewModel()
+    private val args: DetailBookmarkFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -56,7 +56,7 @@ class DetailFragment : Fragment() {
             setStatusBookmark(statusBookmark)
             binding.fab.setOnClickListener {
                 statusBookmark = !statusBookmark
-                detailViewModel.setBookmarkMovie(detailMovie, statusBookmark)
+                detailBookmarkViewModel.setBookmarkMovie(detailMovie, statusBookmark)
                 setStatusBookmark(statusBookmark)
             }
         }
@@ -75,7 +75,7 @@ class DetailFragment : Fragment() {
             setStatusBookmark(statusBookmark)
             binding.fab.setOnClickListener {
                 statusBookmark = !statusBookmark
-                detailViewModel.setBookmarkTv(detailTv, statusBookmark)
+                detailBookmarkViewModel.setBookmarkTv(detailTv, statusBookmark)
                 setStatusBookmark(statusBookmark)
             }
         }

@@ -12,7 +12,8 @@ class ContentInteractor(private val contentRepository: IContentRepository) : Con
 
     override fun getBookmarkedMovie(): Flow<List<Movie>> = contentRepository.getBookmarkedMovie()
 
-    override fun setBookmarkMovie(movie: Movie, state: Boolean) = contentRepository.setBookmarkMovie(movie, state)
+    override fun setBookmarkMovie(movie: Movie, state: Boolean) =
+        contentRepository.setBookmarkMovie(movie, state)
 
     override fun getAllTv(): Flow<Resource<List<Tv>>> = contentRepository.getAllTv()
 

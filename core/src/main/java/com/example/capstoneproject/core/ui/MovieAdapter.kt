@@ -51,6 +51,7 @@ class MovieAdapter : RecyclerView.Adapter<MovieAdapter.ListViewHolder>() {
         init {
             binding.root.setOnClickListener {
                 onItemClick?.invoke(listData[adapterPosition])
+                binding.root.setOnClickListener(null)
             }
         }
     }

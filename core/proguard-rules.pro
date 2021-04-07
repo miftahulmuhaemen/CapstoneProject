@@ -12,6 +12,9 @@
 #   public *;
 #}
 
+-keep public class com.example.capstoneproject.core.domain.model.Movie
+-keep public class com.example.capstoneproject.core.domain.model.Tv
+
 # Uncomment this to preserve the line number information for
 # debugging stack traces.
 #-keepattributes SourceFile,LineNumberTable

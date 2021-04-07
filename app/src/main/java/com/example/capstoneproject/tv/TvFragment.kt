@@ -15,7 +15,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class TvFragment : BaseBottomTabFragment() {
 
-    private var _binding : FragmentContentBinding? = null
+    private var _binding: FragmentContentBinding? = null
     private val binding get() = _binding!!
     private lateinit var tvAdapter: TvAdapter
     private val tvViewModel by viewModel<TvViewModel>()
@@ -33,9 +33,9 @@ class TvFragment : BaseBottomTabFragment() {
 
         tvAdapter = TvAdapter()
         tvAdapter.onItemClick = {
-            navigateWithAction(TvFragmentDirections.actionTvFragmentToDetailFragment(null,it))
+            navigateWithAction(TvFragmentDirections.actionTvFragmentToDetailFragment(null, it))
         }
-        with(binding.recylerView){
+        with(binding.recylerView) {
             layoutManager = LinearLayoutManager(context)
             adapter = tvAdapter
         }
@@ -50,7 +50,11 @@ class TvFragment : BaseBottomTabFragment() {
                     }
                     is Resource.Error -> {
                         binding.progressBar.visibility = View.GONE
-                        Toast.makeText(context, getString(R.string.something_wrong), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            context,
+                            getString(R.string.something_wrong),
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
                 }
             }
@@ -60,6 +64,7 @@ class TvFragment : BaseBottomTabFragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        binding.recylerView.adapter = null
         _binding = null
     }
 }

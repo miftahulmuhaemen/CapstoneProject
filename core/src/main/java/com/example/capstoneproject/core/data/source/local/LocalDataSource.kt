@@ -5,7 +5,7 @@ import com.example.capstoneproject.core.data.source.local.entity.TvEntity
 import com.example.capstoneproject.core.data.source.local.room.ContentDao
 import kotlinx.coroutines.flow.Flow
 
-class LocalDataSource (private val contentDao: ContentDao) {
+class LocalDataSource(private val contentDao: ContentDao) {
 
     fun getAllMovie(): Flow<List<MovieEntity>> = contentDao.getAllMovie()
 

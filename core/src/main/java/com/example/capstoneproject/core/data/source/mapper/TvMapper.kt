@@ -11,12 +11,12 @@ object TvMapper {
         val tvList = ArrayList<TvEntity>()
         input.map {
             val tourism = TvEntity(
-                    id = it.id,
-                    posterPath = it.posterPath,
-                    overview = it.overview,
-                    firstAirDate = it.firstAirDate,
-                    name = it.name,
-                    bookmarked = false
+                id = it.id,
+                posterPath = it.posterPath,
+                overview = it.overview,
+                firstAirDate = it.firstAirDate,
+                name = it.name,
+                bookmarked = false
             )
             tvList.add(tourism)
         }
@@ -24,23 +24,23 @@ object TvMapper {
     }
 
     fun tvMapEntitiesToDomain(input: List<TvEntity>): List<Tv> =
-            input.map {
-                Tv(
-                        id = it.id,
-                        posterPath = it.posterPath,
-                        overview = it.overview,
-                        firstAirDate = it.firstAirDate,
-                        name = it.name,
-                        bookmarked = it.bookmarked
-                )
-            }
+        input.map {
+            Tv(
+                id = it.id,
+                posterPath = it.posterPath,
+                overview = it.overview,
+                firstAirDate = it.firstAirDate,
+                name = it.name,
+                bookmarked = it.bookmarked
+            )
+        }
 
     fun tvMapDomainToEntity(input: Tv) = TvEntity(
-            id = input.id,
-            posterPath = input.posterPath,
-            overview = input.overview,
-            firstAirDate = input.firstAirDate,
-            name = input.name,
-            bookmarked = input.bookmarked
+        id = input.id,
+        posterPath = input.posterPath,
+        overview = input.overview,
+        firstAirDate = input.firstAirDate,
+        name = input.name,
+        bookmarked = input.bookmarked
     )
 }

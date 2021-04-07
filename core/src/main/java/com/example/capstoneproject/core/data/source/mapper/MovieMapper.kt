@@ -11,12 +11,12 @@ object MovieMapper {
         val movieList = ArrayList<MovieEntity>()
         input.map {
             val tourism = MovieEntity(
-                    id = it.id,
-                    posterPath = it.posterPath,
-                    overview = it.overview,
-                    releaseDate = it.releaseDate,
-                    title = it.title,
-                    bookmarked = false
+                id = it.id,
+                posterPath = it.posterPath,
+                overview = it.overview,
+                releaseDate = it.releaseDate,
+                title = it.title,
+                bookmarked = false
             )
             movieList.add(tourism)
         }
@@ -24,23 +24,23 @@ object MovieMapper {
     }
 
     fun movieMapEntitiesToDomain(input: List<MovieEntity>): List<Movie> =
-            input.map {
-                Movie(
-                        id = it.id,
-                        posterPath = it.posterPath,
-                        overview = it.overview,
-                        releaseDate = it.releaseDate,
-                        title = it.title,
-                        bookmarked = it.bookmarked
-                )
-            }
+        input.map {
+            Movie(
+                id = it.id,
+                posterPath = it.posterPath,
+                overview = it.overview,
+                releaseDate = it.releaseDate,
+                title = it.title,
+                bookmarked = it.bookmarked
+            )
+        }
 
     fun movieMapDomainToEntity(input: Movie) = MovieEntity(
-            id = input.id,
-            posterPath = input.posterPath,
-            overview = input.overview,
-            releaseDate = input.releaseDate,
-            title = input.title,
-            bookmarked = input.bookmarked
+        id = input.id,
+        posterPath = input.posterPath,
+        overview = input.overview,
+        releaseDate = input.releaseDate,
+        title = input.title,
+        bookmarked = input.bookmarked
     )
 }

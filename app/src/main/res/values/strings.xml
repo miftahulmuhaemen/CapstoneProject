@@ -2,15 +2,10 @@
     <string name="app_name">CapstoneProject</string>
     <string name="dummyTitle">dummyTitle</string>
     <string name="dummyYear">dummyYear</string>
-    <string name="dummySubTitle">subTitle</string>
     <string name="dummyLoremIpsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec venenatis varius metus sit amet bibendum. Sed placerat viverra nisl. Aliquam eget dapibus lectus. Quisque sed placerat neque, in iaculis erat. Donec pulvinar, metus non fermentum dapibus, lacus erat egestas ex, in efficitur sapien massa eget metus. Etiam rutrum massa in risus maximus, id cursus mi tincidunt. Sed pretium tempor sem, vitae tincidunt nulla varius nec. Sed non sapien massa. Sed nec turpis tortor. Duis nunc nisl, fringilla sed urna fermentum, sagittis ultrices erat.</string>
     <string name="tv">TV</string>
     <string name="movie">Movie</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="bookmarks">Bookmarks</string>
-    <string name="no_data">No Data</string>
     <string name="something_wrong">Something wrong</string>
-    <string name="back">Back</string>
-    <string name="title_bookmark">Bookmark</string>
 </resources>

@@ -15,7 +15,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MovieFragment : BaseBottomTabFragment() {
 
-    private var _binding : FragmentContentBinding? = null
+    private var _binding: FragmentContentBinding? = null
     private val binding get() = _binding!!
     private lateinit var movieAdapter: MovieAdapter
     private val movieViewModel by viewModel<MovieViewModel>()
@@ -33,9 +33,14 @@ class MovieFragment : BaseBottomTabFragment() {
 
         movieAdapter = MovieAdapter()
         movieAdapter.onItemClick = {
-            navigateWithAction(MovieFragmentDirections.actionMovieFragmentToDetailFragment(it,null))
+            navigateWithAction(
+                MovieFragmentDirections.actionMovieFragmentToDetailFragment(
+                    it,
+                    null
+                )
+            )
         }
-        with(binding.recylerView){
+        with(binding.recylerView) {
             layoutManager = LinearLayoutManager(context)
             adapter = movieAdapter
         }
@@ -50,7 +55,11 @@ class MovieFragment : BaseBottomTabFragment() {
                     }
                     is Resource.Error -> {
                         binding.progressBar.visibility = View.GONE
-                        Toast.makeText(context, getString(R.string.something_wrong), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            context,
+                            getString(R.string.something_wrong),
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
                 }
             }
@@ -60,6 +69,7 @@ class MovieFragment : BaseBottomTabFragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        binding.recylerView.adapter = null
         _binding = null
     }
 }

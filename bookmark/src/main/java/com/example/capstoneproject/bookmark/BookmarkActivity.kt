@@ -1,14 +1,15 @@
-package com.example.capstoneproject
+package com.example.capstoneproject.bookmark
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
-import com.example.capstoneproject.databinding.ActivityBookmarkBinding
+import com.example.capstoneproject.bookmark.databinding.ActivityBookmarkBinding
+import org.koin.core.context.loadKoinModules
 
 class BookmarkActivity : AppCompatActivity() {
 
-    private var _binding : ActivityBookmarkBinding? = null
+    private var _binding: ActivityBookmarkBinding? = null
     private val binding get() = _binding!!
     private val navHostController by lazy {
         (supportFragmentManager.findFragmentById(R.id.nav_host_bookmark) as NavHostFragment).navController
@@ -16,13 +17,13 @@ class BookmarkActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         _binding = ActivityBookmarkBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        loadKoinModules(bookmarkModule)
+
         binding.bottomNavigation.setupWithNavController(navHostController)
-        binding.bottomNavigation.setOnNavigationItemReselectedListener {
-            "Reselect blocked."
-        }
         binding.btnBack.setOnClickListener {
             finish()
         }
@@ -30,7 +31,7 @@ class BookmarkActivity : AppCompatActivity() {
 
     override fun onBackPressed() {
         super.onBackPressed()
-        if(navHostController.currentBackStackEntry == null)
+        if (navHostController.currentBackStackEntry == null)
             finish()
     }
 

@@ -8,20 +8,20 @@
         android:name="com.example.capstoneproject.bookmark.movie.BookmarkedMovieFragment"
         android:label="BookmarkedMovieFragment" >
         <action
-            android:id="@+id/action_bookmarkedMovieFragment_to_detailFragment"
-            app:destination="@id/detailFragment" />
+            android:id="@+id/action_bookmarkedMovieFragment_to_detailBookmarkFragment"
+            app:destination="@id/detailBookmarkFragment" />
     </fragment>
     <fragment
         android:id="@+id/bookmarkedTvFragment"
         android:name="com.example.capstoneproject.bookmark.tv.BookmarkedTvFragment"
         android:label="BookmarkedTvFragment" >
         <action
-            android:id="@+id/action_bookmarkedTvFragment_to_detailFragment"
-            app:destination="@id/detailFragment" />
+            android:id="@+id/action_bookmarkedTvFragment_to_detailBookmarkFragment"
+            app:destination="@id/detailBookmarkFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/detailFragment"
-        android:name="com.example.capstoneproject.detail.DetailFragment"
+        <fragment
+        android:id="@+id/detailBookmarkFragment"
+        android:name="com.example.capstoneproject.bookmark.detail.DetailBookmarkFragment"
         android:label="{data}">
         <argument
             android:name="movie"

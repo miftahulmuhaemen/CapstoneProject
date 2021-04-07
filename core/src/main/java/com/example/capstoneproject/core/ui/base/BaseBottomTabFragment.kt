@@ -18,11 +18,6 @@ open class BaseBottomTabFragment : Fragment() {
         findNavController().navigate(action)
     }
 
-    fun navigate(resId: Int) {
-        isNavigated = true
-        findNavController().navigate(resId)
-    }
-
     override fun onDestroyView() {
         super.onDestroyView()
         if (!isNavigated)
