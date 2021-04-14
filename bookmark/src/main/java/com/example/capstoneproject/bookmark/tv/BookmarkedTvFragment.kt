@@ -42,6 +42,7 @@ class BookmarkedTvFragment : BaseBottomTabFragment() {
             adapter = tvAdapter
         }
         tvViewModel.tvs.observe(viewLifecycleOwner, { tvs ->
+            binding.emptyAnimation.visibility = if(tvs.isNullOrEmpty()) View.VISIBLE else View.GONE
             tvAdapter.setData(tvs)
         })
     }

@@ -1,6 +1,5 @@
 package com.example.capstoneproject.core.data.source.remote
 
-import android.util.Log
 import com.example.capstoneproject.core.data.source.remote.network.ApiResponse
 import com.example.capstoneproject.core.data.source.remote.network.ApiService
 import com.example.capstoneproject.core.data.source.remote.response.MovieResponse
@@ -9,6 +8,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import timber.log.Timber
 
 class RemoteDataSource(private val apiService: ApiService) {
 
@@ -24,7 +24,7 @@ class RemoteDataSource(private val apiService: ApiService) {
                 }
             } catch (e: Exception) {
                 emit(ApiResponse.Error(e.toString()))
-                Log.e("RemoteDataSource", e.toString())
+                Timber.e(e.toString())
             }
         }.flowOn(Dispatchers.IO)
     }
@@ -41,7 +41,7 @@ class RemoteDataSource(private val apiService: ApiService) {
                 }
             } catch (e: Exception) {
                 emit(ApiResponse.Error(e.toString()))
-                Log.e("RemoteDataSource", e.toString())
+                Timber.e(e.toString())
             }
         }.flowOn(Dispatchers.IO)
     }

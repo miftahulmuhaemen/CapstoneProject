@@ -46,6 +46,7 @@ class TvFragment : BaseBottomTabFragment() {
                     is Resource.Loading -> binding.progressBar.visibility = View.VISIBLE
                     is Resource.Success -> {
                         binding.progressBar.visibility = View.GONE
+                        binding.emptyAnimation.visibility = if(tv.data.isNullOrEmpty()) View.VISIBLE else View.GONE
                         tvAdapter.setData(tv.data)
                     }
                     is Resource.Error -> {

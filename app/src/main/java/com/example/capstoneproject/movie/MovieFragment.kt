@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.capstoneproject.R
 import com.example.capstoneproject.core.data.Resource
+import com.example.capstoneproject.core.domain.model.Movie
 import com.example.capstoneproject.core.ui.MovieAdapter
 import com.example.capstoneproject.core.ui.base.BaseBottomTabFragment
 import com.example.capstoneproject.databinding.FragmentContentBinding
@@ -51,6 +52,7 @@ class MovieFragment : BaseBottomTabFragment() {
                     is Resource.Loading -> binding.progressBar.visibility = View.VISIBLE
                     is Resource.Success -> {
                         binding.progressBar.visibility = View.GONE
+                        binding.emptyAnimation.visibility = if(movie.data.isNullOrEmpty()) View.VISIBLE else View.GONE
                         movieAdapter.setData(movie.data)
                     }
                     is Resource.Error -> {

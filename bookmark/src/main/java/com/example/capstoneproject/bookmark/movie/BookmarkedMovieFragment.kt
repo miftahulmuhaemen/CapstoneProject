@@ -43,6 +43,7 @@ class BookmarkedMovieFragment : BaseBottomTabFragment() {
         }
 
         movieViewModel.movies.observe(viewLifecycleOwner, { movie ->
+            binding.emptyAnimation.visibility = if(movie.isNullOrEmpty()) View.VISIBLE else View.GONE
             movieAdapter.setData(movie)
         })
     }
