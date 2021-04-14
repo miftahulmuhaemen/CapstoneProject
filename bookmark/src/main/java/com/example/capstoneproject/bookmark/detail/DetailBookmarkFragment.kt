@@ -23,8 +23,8 @@ class DetailBookmarkFragment : Fragment() {
     private val args: DetailBookmarkFragmentArgs by navArgs()
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View {
         _binding = FragmentDetailBinding.inflate(inflater, container, false)
         return binding.root
@@ -46,8 +46,8 @@ class DetailBookmarkFragment : Fragment() {
     private fun showDetailMovie(detailMovie: Movie?) {
         detailMovie?.let { data ->
             Glide.with(this)
-                .load(BuildConfig.IMAGE_URL + data.posterPath)
-                .into(binding.imgPoster)
+                    .load(BuildConfig.IMAGE_URL + data.posterPath)
+                    .into(binding.imgPoster)
             binding.tvItemTitle.text = data.title
             binding.tvItemDate.text = data.releaseDate
             binding.tvItemDescription.text = data.overview
@@ -65,8 +65,8 @@ class DetailBookmarkFragment : Fragment() {
     private fun showDetailTv(detailTv: Tv?) {
         detailTv?.let { data ->
             Glide.with(this)
-                .load(BuildConfig.IMAGE_URL + data.posterPath)
-                .into(binding.imgPoster)
+                    .load(BuildConfig.IMAGE_URL + data.posterPath)
+                    .into(binding.imgPoster)
             binding.tvItemTitle.text = data.name
             binding.tvItemDate.text = data.firstAirDate
             binding.tvItemDescription.text = data.overview
@@ -84,17 +84,17 @@ class DetailBookmarkFragment : Fragment() {
     private fun setStatusBookmark(statusFavorite: Boolean) {
         if (statusFavorite) {
             binding.fab.setImageDrawable(
-                ContextCompat.getDrawable(
-                    requireActivity(),
-                    R.drawable.ic_favorite_white
-                )
+                    ContextCompat.getDrawable(
+                            requireActivity(),
+                            R.drawable.ic_favorite_white
+                    )
             )
         } else {
             binding.fab.setImageDrawable(
-                ContextCompat.getDrawable(
-                    requireActivity(),
-                    R.drawable.ic_not_favorite_white
-                )
+                    ContextCompat.getDrawable(
+                            requireActivity(),
+                            R.drawable.ic_not_favorite_white
+                    )
             )
         }
     }

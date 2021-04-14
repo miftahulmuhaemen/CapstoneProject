@@ -18,8 +18,8 @@ class BookmarkedMovieFragment : BaseBottomTabFragment() {
     private val movieViewModel by viewModel<BookmarkedMovieViewModel>()
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View {
         _binding = FragmentContentBinding.inflate(inflater, container, false)
         return binding.root
@@ -31,10 +31,10 @@ class BookmarkedMovieFragment : BaseBottomTabFragment() {
         movieAdapter = MovieAdapter()
         movieAdapter.onItemClick = {
             navigateWithAction(
-                BookmarkedMovieFragmentDirections.actionBookmarkedMovieFragmentToDetailBookmarkFragment(
-                    it,
-                    null
-                )
+                    BookmarkedMovieFragmentDirections.actionBookmarkedMovieFragmentToDetailBookmarkFragment(
+                            it,
+                            null
+                    )
             )
         }
         with(binding.recylerView) {
@@ -43,7 +43,7 @@ class BookmarkedMovieFragment : BaseBottomTabFragment() {
         }
 
         movieViewModel.movies.observe(viewLifecycleOwner, { movie ->
-            binding.emptyAnimation.visibility = if(movie.isNullOrEmpty()) View.VISIBLE else View.GONE
+            binding.emptyAnimation.visibility = if (movie.isNullOrEmpty()) View.VISIBLE else View.GONE
             movieAdapter.setData(movie)
         })
     }

@@ -18,8 +18,8 @@ class BookmarkedTvFragment : BaseBottomTabFragment() {
     private val tvViewModel by viewModel<BookmarkedTvViewModel>()
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View {
         _binding = FragmentContentBinding.inflate(inflater, container, false)
         return binding.root
@@ -31,10 +31,10 @@ class BookmarkedTvFragment : BaseBottomTabFragment() {
         tvAdapter = TvAdapter()
         tvAdapter.onItemClick = {
             navigateWithAction(
-                BookmarkedTvFragmentDirections.actionBookmarkedTvFragmentToDetailBookmarkFragment(
-                    null,
-                    it
-                )
+                    BookmarkedTvFragmentDirections.actionBookmarkedTvFragmentToDetailBookmarkFragment(
+                            null,
+                            it
+                    )
             )
         }
         with(binding.recylerView) {
@@ -42,7 +42,7 @@ class BookmarkedTvFragment : BaseBottomTabFragment() {
             adapter = tvAdapter
         }
         tvViewModel.tvs.observe(viewLifecycleOwner, { tvs ->
-            binding.emptyAnimation.visibility = if(tvs.isNullOrEmpty()) View.VISIBLE else View.GONE
+            binding.emptyAnimation.visibility = if (tvs.isNullOrEmpty()) View.VISIBLE else View.GONE
             tvAdapter.setData(tvs)
         })
     }

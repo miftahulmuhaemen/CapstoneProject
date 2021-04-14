@@ -7,8 +7,8 @@ import com.example.capstoneproject.core.domain.usecase.ContentUseCase
 
 class DetailBookmarkViewModel(private val contentUseCase: ContentUseCase) : ViewModel() {
     fun setBookmarkMovie(movie: Movie, state: Boolean) =
-        contentUseCase.setBookmarkMovie(movie, state)
+            contentUseCase.setBookmarkMovie(movie, state)
 
     fun setBookmarkTv(tv: Tv, state: Boolean) =
-        contentUseCase.setBookmarkTv(tv, state)
+            contentUseCase.setBookmarkTv(tv, state)
 }

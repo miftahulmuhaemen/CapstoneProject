@@ -3,9 +3,9 @@
 package com.example.capstoneproject
 
 import android.app.Application
-import com.example.capstoneproject.core.util.ReleaseTree
 import com.example.capstoneproject.core.di.networkModule
 import com.example.capstoneproject.core.di.repositoryModule
+import com.example.capstoneproject.core.util.ReleaseTree
 import com.example.capstoneproject.detail.DetailViewModel
 import com.example.capstoneproject.movie.MovieViewModel
 import com.example.capstoneproject.tv.TvViewModel
