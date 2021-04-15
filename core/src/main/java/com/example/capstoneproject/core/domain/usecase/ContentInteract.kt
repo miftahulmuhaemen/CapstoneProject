@@ -6,7 +6,7 @@ import com.example.capstoneproject.core.domain.model.Tv
 import com.example.capstoneproject.core.domain.repository.IContentRepository
 import kotlinx.coroutines.flow.Flow
 
-class ContentInteractor(private val contentRepository: IContentRepository) : ContentUseCase {
+class ContentInteract(private val contentRepository: IContentRepository) : ContentUseCase {
 
     override fun getAllMovie(): Flow<Resource<List<Movie>>> = contentRepository.getAllMovie()
 

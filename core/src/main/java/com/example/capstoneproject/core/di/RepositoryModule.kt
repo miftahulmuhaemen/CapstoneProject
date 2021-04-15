@@ -7,7 +7,7 @@ import com.example.capstoneproject.core.data.source.local.LocalDataSource
 import com.example.capstoneproject.core.data.source.local.room.ContentDao
 import com.example.capstoneproject.core.data.source.local.room.ContentDatabase
 import com.example.capstoneproject.core.data.source.remote.RemoteDataSource
-import com.example.capstoneproject.core.domain.usecase.ContentInteractor
+import com.example.capstoneproject.core.domain.usecase.ContentInteract
 import com.example.capstoneproject.core.domain.usecase.ContentUseCase
 import net.sqlcipher.database.SQLiteDatabase
 import net.sqlcipher.database.SupportFactory
@@ -30,7 +30,7 @@ val repositoryModule = module {
     }
 
     fun provideContentUseCase(repository: ContentRepository): ContentUseCase {
-        return ContentInteractor(repository)
+        return ContentInteract(repository)
     }
 
     single { provideDatabase(androidApplication()) }
