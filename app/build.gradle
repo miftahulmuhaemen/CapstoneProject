@@ -45,9 +45,6 @@ android {
         jvmTarget = '1.8'
     }
 
-    def localProperties = new Properties()
-    localProperties.load(new FileInputStream(rootProject.file("local.properties")))
-
     dynamicFeatures = [':bookmark']
 }
 
