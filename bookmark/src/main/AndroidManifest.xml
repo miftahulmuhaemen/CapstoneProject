@@ -15,6 +15,7 @@
 
     <application
         android:fullBackupContent="true"
+        android:supportsRtl="true"
         >
         <activity android:name=".BookmarkActivity">
             <intent-filter>

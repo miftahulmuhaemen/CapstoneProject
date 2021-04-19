@@ -11,7 +11,7 @@ import androidx.navigation.fragment.findNavController
  */
 
 open class BaseBottomTabFragment : Fragment() {
-    var isNavigated = false
+    private var isNavigated = false
 
     fun navigateWithAction(action: NavDirections) {
         isNavigated = true
