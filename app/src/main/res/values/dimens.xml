@@ -4,4 +4,5 @@
     <dimen name="appBarHeight">70dp</dimen>
     <dimen name="globalMargin">16dp</dimen>
     <dimen name="smallPadding">8dp</dimen>
+    <dimen name="noPadding">0dp</dimen>
 </resources>
