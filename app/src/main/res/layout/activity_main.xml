@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="match_parent">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
@@ -20,14 +20,14 @@
                 android:id="@+id/tvBookmarks"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
                 android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/globalMargin"
+                android:paddingStart="@dimen/noPadding"
+                android:paddingEnd="@dimen/smallPadding"
                 android:text="@string/bookmarks"
                 android:textColor="@color/white"
                 android:textSize="@dimen/title"
-                android:paddingStart="@dimen/noPadding"
-                android:paddingEnd="@dimen/smallPadding"
-                android:layout_marginEnd="@dimen/globalMargin"
                 tools:ignore="RelativeOverlap" />
 
         </RelativeLayout>
@@ -36,22 +36,22 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_main"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:defaultNavHost="true"
-        android:name="androidx.navigation.fragment.NavHostFragment"
-        app:navGraph="@navigation/nav_graph_main"
+        android:layout_above="@id/bottomNavigation"
         android:layout_below="@id/appbar"
-        android:layout_above="@id/bottomNavigation"/>
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_graph_main" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:background="@color/white"
-        app:menu="@menu/main_navbar_items"
-        app:labelVisibilityMode="labeled"
         app:itemIconTint="@drawable/state_navbar"
-        android:layout_alignParentBottom="true"/>
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/main_navbar_items" />
 
 </RelativeLayout>

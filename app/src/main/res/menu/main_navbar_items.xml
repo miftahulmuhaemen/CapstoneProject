@@ -12,6 +12,6 @@
         android:enabled="true"
         android:icon="@drawable/movie24"
         android:menuCategory="secondary"
-        android:title="@string/movie"/>
+        android:title="@string/movie" />
 
 </menu>

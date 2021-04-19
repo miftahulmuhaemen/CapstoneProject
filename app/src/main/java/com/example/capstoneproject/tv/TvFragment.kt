@@ -21,8 +21,8 @@ class TvFragment : BaseBottomTabFragment() {
     private val tvViewModel by viewModel<TvViewModel>()
 
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View {
         _binding = FragmentContentBinding.inflate(inflater, container, false)
         return binding.root
@@ -46,15 +46,16 @@ class TvFragment : BaseBottomTabFragment() {
                     is Resource.Loading -> binding.progressBar.visibility = View.VISIBLE
                     is Resource.Success -> {
                         binding.progressBar.visibility = View.GONE
-                        binding.emptyAnimation.visibility = if (tv.data.isNullOrEmpty()) View.VISIBLE else View.GONE
+                        binding.emptyAnimation.visibility =
+                            if (tv.data.isNullOrEmpty()) View.VISIBLE else View.GONE
                         tvAdapter.setData(tv.data)
                     }
                     is Resource.Error -> {
                         binding.progressBar.visibility = View.GONE
                         Toast.makeText(
-                                context,
-                                getString(R.string.something_wrong),
-                                Toast.LENGTH_SHORT
+                            context,
+                            getString(R.string.something_wrong),
+                            Toast.LENGTH_SHORT
                         ).show()
                     }
                 }
